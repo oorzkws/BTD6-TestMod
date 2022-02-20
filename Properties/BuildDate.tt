@@ -1,0 +1,14 @@
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ output extension=".g.cs" #>
+
+using System;
+namespace ThisMod
+{
+    public partial class Mod
+    {
+        public static DateTime BuildDate { get { return new DateTime(<#
+    Write(DateTime.UtcNow.Ticks.ToString());
+#>L, DateTimeKind.Utc); } }
+    }
+}
